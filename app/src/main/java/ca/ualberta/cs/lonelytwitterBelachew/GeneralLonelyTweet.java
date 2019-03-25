@@ -1,24 +1,24 @@
-package ca.ualberta.cs.lonelytwitter;
+package ca.ualberta.cs.lonelytwitterBelachew;
 
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Date;
 
-public class NormalLonelyTweet implements Serializable {
+public class GeneralLonelyTweet implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	protected Date tweetDate;
 	protected String tweetBody;
 
-	public NormalLonelyTweet() {
+	public GeneralLonelyTweet() {
 	}
 
-	public NormalLonelyTweet(String text, Date date) {
+	public GeneralLonelyTweet(String text, Date date) {
 		this.tweetDate = date;
 		this.tweetBody = text;
 	}
 
-	public Date getTweetDate() {
+	public Date getTweetDateBelachew() {
 		return tweetDate;
 	}
 
@@ -56,6 +56,6 @@ public class NormalLonelyTweet implements Serializable {
 
 	@Override
 	public String toString() {
-		return getTweetDate() + " | " + getTweetBody() ;
+		return getTweetDateBelachew() + " | " + getTweetBody() ;
 	}
 }

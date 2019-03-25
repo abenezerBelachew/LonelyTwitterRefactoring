@@ -1,4 +1,4 @@
-package ca.ualberta.cs.lonelytwitter;
+package ca.ualberta.cs.lonelytwitterBelachew;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -21,8 +21,8 @@ public class TweetsFileManager {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<NormalLonelyTweet> loadTweets() {
-		List<NormalLonelyTweet> tweets = new ArrayList<NormalLonelyTweet>();
+	public List<GeneralLonelyTweet> loadTweets() {
+		List<GeneralLonelyTweet> tweets = new ArrayList<GeneralLonelyTweet>();
 
 		try {
 			FileInputStream fis = ctx.openFileInput("file.sav");
@@ -31,7 +31,7 @@ public class TweetsFileManager {
 			Object o = ois.readObject();
 
 			if (o instanceof ArrayList) {
-				tweets = (ArrayList<NormalLonelyTweet>) o;
+				tweets = (ArrayList<GeneralLonelyTweet>) o;
 			} else {
 				Log.i("LonelyTwitter", "Error casting");
 			}
@@ -47,7 +47,7 @@ public class TweetsFileManager {
 		return tweets;
 	}
 
-	public void saveTweets(List<NormalLonelyTweet> tweets) {
+	public void saveTweets(List<GeneralLonelyTweet> tweets) {
 		try {
 			FileOutputStream fos = ctx.openFileOutput("file.sav", 0);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
